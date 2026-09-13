@@ -173,7 +173,7 @@ method:DELETE
 ```
 patients
 
-patient_id    patient_name    phone_number    assigned_doctor    department     appointment_date     status     consultation_fee     
+patient_id    patient_name    phone_number    assigned_doctor    department     appointment_date     status    consultation_fee     
 
 1              indhu          1234567899       dr achu             ent           09-08-2026          completed         600
 
@@ -241,3 +241,71 @@ http_request for delete patients
 
 url:localhost:8000/patients/5/
 method:DELETE
+
+### Expense Tracker
+
+expenses 
+
+id     title      amount      category      owner       payment_method
+
+1      grocery     500         food         sura         debit card
+
+2      mobile      80000       electronics   sumesh        g pay
+
+3      laptop      90000       electronics   umesh        debit card
+
+```
+http_request for adding new expenses
+
+url:localhost:8000/expenses/
+method:POST
+body:{
+    "title":"headphones",
+    "amount":850,
+    "category":"electronics",
+    "owner":"sumu",
+    "payment_method":"debit card"
+
+}
+```
+```
+http_request for list all expenses
+
+url:localhost:8000/patients/
+method:GET
+
+```
+```
+http_request for fetching expenses details
+
+url:localhost:8000/expenses/2/
+method:GET
+
+```
+```
+
+http_request for update expenses
+
+url:localhost:8000/patients/3/
+method:PUT
+body:{
+    "title":"speaker",
+    "amount":8500,
+    "category":"electronics",
+    "owner":"kumu",
+    "payment_method":"debit card"
+
+}
+
+```
+
+```
+http_request for delete expenses
+
+url:localhost:8000/expenses/3/
+method:DELETE
+
+```
+
+
+
